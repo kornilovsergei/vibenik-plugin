@@ -1,5 +1,5 @@
 {
-  "description": "At session start, tell Claude when ideas for the user's projects are waiting.",
+  "description": "At session start, remind Claude it can check the Vibenik inbox.",
   "hooks": {
     "SessionStart": [
       {
@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/inbox.sh\"",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh\"",
             "timeout": 5
           }
         ]

@@ -1,22 +1,16 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "vibenik",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Vibenik (Вайбник) in Claude Code: connect your project and add the «+вайбик» button, review and ship ideas from your users, suggest ideas to friends' apps.",
-  "author": { "name": "Vibenik" },
-  "keywords": ["vibe coding", "feedback", "friends", "ideas", "mcp"],
-  "userConfig": {
-    "token": {
-      "type": "string",
-      "title": "Vibenik token",
-      "description": "Personal token from the «Агенты» page on Vibenik (starts with vbk_).",
-      "sensitive": true
-    },
-    "url": {
-      "type": "string",
-      "title": "Vibenik URL",
-      "description": "Where Vibenik runs.",
-      "default": "https://vibenik.vercel.app"
-    }
-  }
+  "author": {
+    "name": "Vibenik"
+  },
+  "keywords": [
+    "vibe coding",
+    "feedback",
+    "friends",
+    "ideas",
+    "mcp"
+  ]
 }

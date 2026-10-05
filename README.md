@@ -1,40 +1,34 @@
 # Вайбник для Claude Code
 
-Плагин подключает Claude Code к [Вайбнику](https://github.com/kornilovsergei/vibenik), где друзья улучшают приложения друг друга. С ним Claude может:
+Плагин подключает Claude Code к [Вайбнику](https://vibenik.vercel.app), где друзья улучшают приложения друг друга. С ним Claude может:
 
 - **подключить твой проект**: описать его, опубликовать после твоего «ок» и встроить в приложение кнопку «+вайбик»;
 - **разобрать идеи**, которые тебе прислали: ответить авторам, поменять статусы, сделать принятые идеи прямо в коде;
 - **предложить идею** в приложение друга или проголосовать за чужую.
 
-При старте сессии плагин сам скажет, если тебя ждут новые идеи.
-
 ## Установка
 
-1. Создай токен на странице [«Агенты»](https://vibenik.vercel.app/agents) (он начинается с `vbk_`).
-2. Поставь плагин:
-   ```bash
-   claude plugin marketplace add kornilovsergei/vibenik-plugin
-   claude plugin install vibenik@vibenik
-   claude plugin configure vibenik
-   ```
-   В `configure` укажи токен. Адрес по умолчанию — `https://vibenik.vercel.app`.
-3. Скажи Claude: «подключи этот проект к Вайбнику».
+```bash
+claude plugin marketplace add kornilovsergei/vibenik-plugin
+claude plugin install vibenik@vibenik
+```
+
+Ключи копировать не нужно. При первом обращении к Вайбнику откроется браузер: войди и нажми «Разрешить». Если браузер не открылся сам, набери в Claude Code `/mcp`, выбери **vibenik** и нажми **Authenticate**.
+
+Потом скажи Claude: «подключи этот проект к Вайбнику».
 
 ## Что внутри
 
 | Файл | Зачем |
 |---|---|
-| `plugin/.mcp.json` | MCP-сервер Вайбника: адрес и токен из настроек плагина |
-| `plugin/skills/` | Инструкции для Claude: `connect`, `inbox`, `suggest` |
-| `plugin/hooks/` | При старте сессии спрашивает, есть ли новые идеи |
-| `plugin/.claude-plugin/plugin.json` | Название, версия, настройки (токен хранится как секрет) |
+| `plugin/.mcp.json` | MCP-сервер Вайбника, вход через браузер (OAuth) |
+| `plugin/skills/` | Сценарии для Claude: `connect`, `inbox`, `suggest` |
+| `plugin/hooks/` | При старте сессии напоминает Claude, что можно проверить новые идеи |
 
-Плагин не содержит кода сервера. Это только настройки и инструкции для Claude Code.
+Плагин не содержит кода сервера и секретов, только настройки и инструкции для Claude Code.
 
 ## Без плагина
 
-Любой агент с поддержкой MCP по HTTP (Cursor, Codex, ChatGPT…) подключается напрямую:
+Приложение Claude (claude.ai, десктоп): **Настройки → Коннекторы → Добавить свой коннектор**, адрес `https://vibenik.vercel.app/api/mcp`.
 
-```bash
-claude mcp add --transport http vibenik <адрес>/api/mcp --header "Authorization: Bearer vbk_…"
-```
+Любой другой MCP-клиент (ChatGPT, Cursor, Codex…): тот же адрес, вход через браузер.

@@ -7,7 +7,7 @@ description: Connect the current project to Vibenik (Вайбник) and add the
 
 Vibenik lets people who use a small app suggest improvements to its owner. You act for the **owner**. Use the `vibenik` MCP tools.
 
-1. **Check the connection.** Call `whoami`. If it says not connected, tell the user to create a token on the «Агенты» page and set it with `claude plugin configure vibenik`, then stop.
+1. **Check the connection.** Call `whoami`. If the vibenik server is not authenticated, tell the user to type `/mcp`, choose **vibenik** and press **Authenticate** — a browser opens, they sign in to Vibenik and press «Разрешить». Then continue.
 2. **Is it already connected?** Search for the project (`search_projects` with its name) and check `get_inbox`. If the user already owns it, you will update it instead of creating a duplicate.
 3. **Draft the card** from the codebase (README, manifest, main screens):
    - `name` — short; `tagline` — one line, ≤160 chars;

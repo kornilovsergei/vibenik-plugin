@@ -2,10 +2,7 @@
   "mcpServers": {
     "vibenik": {
       "type": "http",
-      "url": "${user_config.url}/api/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.token}"
-      }
+      "url": "https://vibenik.vercel.app/api/mcp"
     }
   }
 }
