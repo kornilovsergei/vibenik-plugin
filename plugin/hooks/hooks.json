@@ -1,0 +1,17 @@
+{
+  "description": "At session start, tell Claude when ideas for the user's projects are waiting.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/inbox.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

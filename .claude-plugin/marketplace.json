@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "vibenik",
+  "description": "Vibenik — apps your friends vibe-code, improved together.",
+  "owner": { "name": "Vibenik" },
+  "plugins": [
+    {
+      "name": "vibenik",
+      "description": "Connect your project to Vibenik, review ideas from your users, and suggest ideas to friends' apps — from Claude Code.",
+      "source": "./plugin",
+      "category": "productivity"
+    }
+  ]
+}
