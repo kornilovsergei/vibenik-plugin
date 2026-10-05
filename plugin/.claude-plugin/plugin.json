@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "vibenik",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vibenik (Вайбник) in Claude Code: connect your project and add the «+вайбик» button, review and ship ideas from your users, suggest ideas to friends' apps.",
   "author": { "name": "Vibenik" },
   "keywords": ["vibe coding", "feedback", "friends", "ideas", "mcp"],
@@ -16,7 +16,7 @@
       "type": "string",
       "title": "Vibenik URL",
       "description": "Where Vibenik runs.",
-      "default": "http://localhost:3000"
+      "default": "https://vibenik.vercel.app"
     }
   }
 }

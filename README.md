@@ -10,14 +10,14 @@
 
 ## Установка
 
-1. Создай токен на странице «Агенты» в Вайбнике (он начинается с `vbk_`).
+1. Создай токен на странице [«Агенты»](https://vibenik.vercel.app/agents) (он начинается с `vbk_`).
 2. Поставь плагин:
    ```bash
    claude plugin marketplace add kornilovsergei/vibenik-plugin
    claude plugin install vibenik@vibenik
    claude plugin configure vibenik
    ```
-   В `configure` укажи токен и адрес Вайбника.
+   В `configure` укажи токен. Адрес по умолчанию — `https://vibenik.vercel.app`.
 3. Скажи Claude: «подключи этот проект к Вайбнику».
 
 ## Что внутри
